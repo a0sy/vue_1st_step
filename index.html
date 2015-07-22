@@ -7,7 +7,7 @@
 </head>
 <body>
   <div id="simple">
-      <span v-text="message" v-on="click: magnify" v-attr="style:font"></span>
+      <span v-on="click: magnify" v-attr="style:font">{{message}}</span>
   </div>
   <script>
   var app = new Vue({
