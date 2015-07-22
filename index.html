@@ -8,6 +8,7 @@
 <body>
   <div id="simple">
       <span v-on="click: magnify" v-style="myStyle">{{message}}</span>
+      <span v-if="display">aaaaa</span>
   </div>
   <script>
   var app = new Vue({
@@ -16,7 +17,8 @@
        message: "Hello Vue.js",
        myStyle: {
          color: 'black'
-       }
+       },
+       display: false
    },
    methods:{
        magnify: function(){
@@ -25,6 +27,7 @@
           color: 'red',
           'font-weight': 'bold'
         }
+        this.display = true;
        }
    }
   })
