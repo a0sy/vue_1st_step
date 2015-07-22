@@ -3,8 +3,25 @@
 <head>
     <meta charset="utf-8">
     <title>Vue_1step</title>
+    <script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
 </head>
 <body>
-
+  <div id="simple">
+      <span v-text="message" v-on="click: magnify" v-attr="style:font"></span>
+  </div>
+  <script>
+  var app = new Vue({
+   el: '#simple',
+   data: {
+       message: "Hello Vue.js",
+       font:""
+   },
+   methods:{
+       magnify: function(){
+           this.font = "font-size:20px;color:red"
+       }
+   }
+  })
+  </script>
 </body>
 </html>
