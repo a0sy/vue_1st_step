@@ -7,21 +7,24 @@
 </head>
 <body>
   <div id="simple">
-      <span v-on="click: magnify" v-attr="style:font, class:class">{{message}}</span>
+      <span v-on="click: magnify" v-style="myStyle">{{message}}</span>
   </div>
   <script>
   var app = new Vue({
    el: '#simple',
    data: {
        message: "Hello Vue.js",
-       font: "color:black",
-       class: "aaaa"
+       myStyle: {
+         color: 'black'
+       }
    },
    methods:{
        magnify: function(){
         this.message = "Magnified";
-        this.font = "font-size:20px;color:red";
-        this.class = "bbbb";
+        this.myStyle = {
+          color: 'red',
+          'font-weight': 'bold'
+        }
        }
    }
   })
